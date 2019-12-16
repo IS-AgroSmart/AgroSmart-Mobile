@@ -1,4 +1,4 @@
-package com.example.droneapp.ui.share;
+package com.example.droneapp.ui.vuelos_pendientes;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.droneapp.R;
 
-public class ShareFragment extends Fragment {
+public class VuelosPendientesFragment extends Fragment {
 
-    private ShareViewModel shareViewModel;
+    private VuelosPendientesViewModel vuelosPendientesViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        shareViewModel =
-                ViewModelProviders.of(this).get(ShareViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_share, container, false);
-        final TextView textView = root.findViewById(R.id.text_share);
-        shareViewModel.getText().observe(this, new Observer<String>() {
+        vuelosPendientesViewModel =
+                ViewModelProviders.of(this).get(VuelosPendientesViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_vuelos_pendientes, container, false);
+        final TextView textView = root.findViewById(R.id.text_tools);
+        vuelosPendientesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

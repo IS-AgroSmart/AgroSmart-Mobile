@@ -5,29 +5,29 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_crear_vuelo"
             android:icon="@drawable/ic_add_circle_outline_black_24dp"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_crear_vuelo" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_vuelos_terminados"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Vuelos Terminados" />
+            android:title="@string/menu_vuelos_terminados" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_vuelos_en_procesamiento"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Vuelos en Procesamiento" />
+            android:title="@string/menu_vuelos_en_procesamiento" />
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_vuelos_pendientes"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Vuelos Pendientes" />
+            android:title="@string/menu_vuelos_pendientes" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/menu_cerrar_sesion_antes">
         <menu>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_cerrar_sesion"
                 android:icon="@drawable/ic_close_black_24dp"
-                android:title="@string/menu_send" />
+                android:title="@string/menu_cerrar_sesion" />
         </menu>
     </item>
 

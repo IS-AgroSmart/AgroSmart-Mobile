@@ -1,4 +1,4 @@
-package com.example.droneapp.ui.gallery;
+package com.example.droneapp.ui.vuelos_terminados;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.droneapp.R;
 
-public class GalleryFragment extends Fragment {
+public class VuelosTerminadosFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private VuelosTerminadosViewModel vuelosTerminadosViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        vuelosTerminadosViewModel =
+                ViewModelProviders.of(this).get(VuelosTerminadosViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_vuelos_terminados, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(this, new Observer<String>() {
+        vuelosTerminadosViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

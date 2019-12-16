@@ -1,16 +1,16 @@
-package com.example.droneapp.ui.slideshow;
+package com.example.droneapp.ui.vuelos_en_procesamiento;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class VuelosEnProcesamientoViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public VuelosEnProcesamientoViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("Esto es Vuelos en Procesamiento fragment");
     }
 
     public LiveData<String> getText() {

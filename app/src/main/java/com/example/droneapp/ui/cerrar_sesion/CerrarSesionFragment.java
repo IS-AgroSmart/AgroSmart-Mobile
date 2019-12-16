@@ -1,4 +1,4 @@
-package com.example.droneapp.ui.slideshow;
+package com.example.droneapp.ui.cerrar_sesion;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.droneapp.R;
 
-public class SlideshowFragment extends Fragment {
+public class CerrarSesionFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private CerrarSesionViewModel cerrarSesionViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
+        cerrarSesionViewModel =
+                ViewModelProviders.of(this).get(CerrarSesionViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_cerrar_sesion, container, false);
+        final TextView textView = root.findViewById(R.id.text_send);
+        cerrarSesionViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

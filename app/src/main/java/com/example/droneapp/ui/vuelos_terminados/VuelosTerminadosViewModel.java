@@ -1,16 +1,16 @@
-package com.example.droneapp.ui.share;
+package com.example.droneapp.ui.vuelos_terminados;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ShareViewModel extends ViewModel {
+public class VuelosTerminadosViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ShareViewModel() {
+    public VuelosTerminadosViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is share fragment");
+        mText.setValue("Esto es vuelos terminados fragment");
     }
 
     public LiveData<String> getText() {

@@ -1,16 +1,16 @@
-package com.example.droneapp.ui.home;
+package com.example.droneapp.ui.crear_vuelo;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class CrearVueloViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public CrearVueloViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("Esto es Crear vuelo fragment");
     }
 
     public LiveData<String> getText() {

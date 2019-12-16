@@ -1,4 +1,4 @@
-package com.example.droneapp.ui.send;
+package com.example.droneapp.ui.crear_vuelo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.droneapp.R;
 
-public class SendFragment extends Fragment {
+public class CrearVueloFragment extends Fragment {
 
-    private SendViewModel sendViewModel;
+    private CrearVueloViewModel crearVueloViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        sendViewModel =
-                ViewModelProviders.of(this).get(SendViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_send, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
+        crearVueloViewModel =
+                ViewModelProviders.of(this).get(CrearVueloViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_crear_vuelo, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+        crearVueloViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

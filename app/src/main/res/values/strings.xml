@@ -2,15 +2,26 @@
     <string name="app_name" translatable="false">DroneApp</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
-    <string name="nav_header_title" translatable="false">Android Studio</string>
-    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_title" translatable="false">DroneApp</string>
+    <string name="nav_header_subtitle" translatable="false">Información adicional</string>
     <string name="nav_header_desc" translatable="false">Navigation header</string>
     <string name="action_settings" translatable="false">Settings</string>
 
-    <string name="menu_home" translatable="false">Crear Vuelo</string>
-    <string name="menu_gallery" translatable="false">Vuelos Terminados</string>
-    <string name="menu_slideshow" translatable="false">Vuelos en Procesamiento</string>
-    <string name="menu_tools" translatable="false">Vuelos Pendientes</string>
+    <string name="menu_crear_vuelo" translatable="false">Crear Vuelo</string>
+    <string name="menu_vuelos_terminados" translatable="false">Vuelos Terminados</string>
+    <string name="menu_vuelos_en_procesamiento" translatable="false">Vuelos en Procesamiento</string>
+    <string name="menu_vuelos_pendientes" translatable="false">Vuelos Pendientes</string>
     <!--<string name="menu_share">Share</string>-->
-    <string name="menu_send" translatable="false">Cerrar Sesion</string>
+    <string name="menu_cerrar_sesion" translatable="false">Cerrar Sesion</string>
+    <string name="menu_cerrar_sesion_antes" translatable="false">Opciones Adicionales</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>
