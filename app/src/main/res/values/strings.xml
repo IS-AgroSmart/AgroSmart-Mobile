@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name" translatable="false">DroneApp</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="nav_header_title" translatable="false">Android Studio</string>
+    <string name="nav_header_subtitle" translatable="false">android.studio@android.com</string>
+    <string name="nav_header_desc" translatable="false">Navigation header</string>
+    <string name="action_settings" translatable="false">Settings</string>
+
+    <string name="menu_home" translatable="false">Crear Vuelo</string>
+    <string name="menu_gallery" translatable="false">Vuelos Terminados</string>
+    <string name="menu_slideshow" translatable="false">Vuelos en Procesamiento</string>
+    <string name="menu_tools" translatable="false">Vuelos Pendientes</string>
+    <!--<string name="menu_share">Share</string>-->
+    <string name="menu_send" translatable="false">Cerrar Sesion</string>
+</resources>
