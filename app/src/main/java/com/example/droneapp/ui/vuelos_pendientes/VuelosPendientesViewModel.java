@@ -10,7 +10,7 @@ public class VuelosPendientesViewModel extends ViewModel {
 
     public VuelosPendientesViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Esto es Vuelos Pendientes fragment");
+        mText.setValue("Vista de Vuelos Pendiente Proximamente...");
     }
 
     public LiveData<String> getText() {

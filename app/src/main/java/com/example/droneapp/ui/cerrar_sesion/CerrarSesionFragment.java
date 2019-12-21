@@ -20,16 +20,8 @@ public class CerrarSesionFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        cerrarSesionViewModel =
-                ViewModelProviders.of(this).get(CerrarSesionViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_cerrar_sesion, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        cerrarSesionViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        cerrarSesionViewModel =ViewModelProviders.of(this).get(CerrarSesionViewModel.class);
+        View root = inflater.inflate(R.layout.activity_login, container, false);
         return root;
     }
 }

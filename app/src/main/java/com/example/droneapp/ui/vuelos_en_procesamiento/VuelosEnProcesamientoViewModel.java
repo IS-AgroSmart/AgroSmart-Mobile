@@ -10,7 +10,7 @@ public class VuelosEnProcesamientoViewModel extends ViewModel {
 
     public VuelosEnProcesamientoViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Esto es Vuelos en Procesamiento fragment");
+        mText.setValue("Vista de Vuelos en Procesamiento Proximamente...");
     }
 
     public LiveData<String> getText() {
