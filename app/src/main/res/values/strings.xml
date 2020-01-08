@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">DroneApp</string>
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
@@ -11,13 +12,11 @@
     <string name="menu_vuelos_terminados" translatable="false">Vuelos Terminados</string>
     <string name="menu_vuelos_en_procesamiento" translatable="false">Vuelos en Procesamiento</string>
     <string name="menu_vuelos_pendientes" translatable="false">Vuelos Pendientes</string>
-<<<<<<< HEAD
- 
-=======
->>>>>>> 9f60ee0f177d90e2eac93cfed475742cdacbc9df
+
     <string name="menu_cerrar_sesion" translatable="false">Cerrar Sesion</string>
     <string name="menu_cerrar_sesion_antes" translatable="false">Opciones Adicionales</string>
 
+    <!-- Para el login-->
     <string name="title_activity_login">Iniciar Sesion</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Contraseña</string>
@@ -27,5 +26,17 @@
     <string name="invalid_username">No es un usuario valido</string>
     <string name="invalid_password">Su contraseña deberia de tener mas de 5 caracteres</string>
     <string name="login_failed">"Inicio de Sesion Fallido"</string>
-    
+
+    <!--Para la activity de Crear Vuelo-->
+    <string name="nombre_crear_vuelo">Nombre</string>
+    <string name="nombre_hint_crear_vuelo">Ingrese el nombre del vuelo</string>
+    <string name="fecha_y_hora_crear_vuelo">Fecha/Hora</string>
+    <string name="fecha_y_hora_hint_crear_vuelo">Ingrese la fecha y hora </string>
+    <string name="tipo_de_camara_crear_vuelo">Tipo de Camara</string>
+    <string name="tipo_de_camara_hint_crear_vuelo">Seleccione el tipo de cámara a usar</string>
+    <string name="multiespectral_crear_vuelo">Multiespectral</string>
+    <string name="comentarios_crear_vuelo">Comentarios</string>
+    <string name="crear_vuelo">Crear</string>
+    <string name="cancelar_crear_vuelo">Cancelar</string>
+
 </resources>
