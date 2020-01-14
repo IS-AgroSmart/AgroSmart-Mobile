@@ -42,7 +42,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText_nombre"
+                android:id="@+id/nombre_crear_vuelo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -79,7 +79,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editText3_fecha"
+                android:id="@+id/fecha_crear_vuelo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints=""
@@ -135,7 +135,7 @@
             android:padding="15dp">
 
             <CheckBox
-                android:id="@+id/checkBox"
+                android:id="@+id/multiespectral"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -168,24 +168,22 @@
             android:paddingBottom="5dp">
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
+                android:id="@+id/button_crear_vuelo"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@color/colorPrimary"
-                android:drawableStart="@android:drawable/checkbox_on_background"
                 android:text="@string/crear_vuelo"
                 android:textColor="?attr/colorBackgroundFloating" />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
+                android:id="@+id/button_cancelar_crear_vuelo"
+                android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
                 android:background="@color/colorAccent"
-                android:drawableStart="@drawable/ic_close_black_24dp"
                 android:text="@string/cancelar_crear_vuelo"
                 android:textColor="?attr/colorBackgroundFloating" />
 
