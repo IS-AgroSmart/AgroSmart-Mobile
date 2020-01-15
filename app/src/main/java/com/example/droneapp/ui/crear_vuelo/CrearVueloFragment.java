@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -41,14 +42,16 @@ public class CrearVueloFragment extends Fragment {
                 ViewModelProviders.of(this).get(CrearVueloViewModel.class);
         View root = inflater.inflate(R.layout.fragment_crear_vuelo, container, false);
         final Spinner spinner = (Spinner) root.findViewById(R.id.spinner_tipo_camara);
+        final EditText text_hora = (EditText) root.findViewById(R.id.fecha_crear_vuelo);
 
-        /*Ingresando la fecha actual*/
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        Date date = new Date();
-        String fecha = dateFormat.format(date);
-        final EditText editfecha = (EditText) root.findViewById(R.id.fecha_crear_vuelo);
-        DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");
-        editfecha.setText(fecha + "  " + hourFormat.toString());
+        /*Obteniendo la fecha y hora actual*/
+        crearVueloViewModel.getTextFechaHora().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                text_hora.setText(s);
+            }
+        });
+
 
         /*Obteniendo el Tipo de Camara*/
         crearVueloViewModel.getText().observe(this, new Observer<List<String>>() {
