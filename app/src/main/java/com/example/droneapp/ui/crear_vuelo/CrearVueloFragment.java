@@ -36,7 +36,6 @@ public class CrearVueloFragment extends Fragment {
         View root_fab=inflater.inflate(R.layout.app_bar_main,container,false);
         final FloatingActionButton fab = root_fab.findViewById(R.id.fab);
         fab.hide();
-
          */
         crearVueloViewModel =
                 ViewModelProviders.of(this).get(CrearVueloViewModel.class);
