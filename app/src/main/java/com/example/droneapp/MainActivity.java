@@ -3,11 +3,13 @@ package com.example.droneapp;
 import android.os.Bundle;
 
 import com.example.droneapp.ui.crear_vuelo.CrearVueloFragment;
+import com.example.droneapp.ui.vuelos_terminados.VuelosTerminadosFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import android.view.View;
 
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -30,34 +32,41 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                CrearVueloFragment fragment = new CrearVueloFragment();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(view.getRootView().getId(), fragment);
-                ft.commit();
-                /*
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                 */
-            }
-        });
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_crear_vuelo, R.id.nav_vuelos_terminados, R.id.nav_vuelos_en_procesamiento,
                 R.id.nav_vuelos_pendientes, R.id.nav_cerrar_sesion)
                 .setDrawerLayout(drawer)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        VuelosTerminadosFragment vuelos_t=new VuelosTerminadosFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,vuelos_t);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //NavController navController = Navigation.findNavController(getParent(), R.id.nav_crear_vuelo);
+                //NavigationUI.navigateUp(navController,mAppBarConfiguration);
+                /*
+                CrearVueloFragment ct=new CrearVueloFragment();
+                //getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).commit();
+                getSupportFragmentManager().beginTransaction().replace(
+                        R.id.nav_host_fragment,ct).commit();
+                /*
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+                 */
+            }
+        });
     }
 
     @Override

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -15,43 +14,31 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.droneapp.R;
+import com.example.droneapp.clases.Vuelos;
+
+import java.util.List;
 
 public class VuelosTerminadosFragment extends Fragment {
 
     private VuelosTerminadosViewModel vuelosTerminadosViewModel;
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerViewVuelos;
     private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager layoutManager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         vuelosTerminadosViewModel =
                 ViewModelProviders.of(this).get(VuelosTerminadosViewModel.class);
         View root = inflater.inflate(R.layout.fragment_vuelos_terminados, container, false);
-        final TextView textView = root.findViewById(R.id.textView_nombre_vuelo);
+        recyclerViewVuelos = (RecyclerView) root.findViewById(R.id.recicler_terminar_vuelos);
+        recyclerViewVuelos.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        recyclerView = (RecyclerView) root.findViewById(R.id.recicler_terminar_vuelos);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        recyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-
-        // specify an adapter (see also next example)
-        String[] lop={"ee","33"};
-        mAdapter = new MyAdapter(lop);
-        recyclerView.setAdapter(mAdapter);
-
-        /*
-        vuelosTerminadosViewModel.getTextNombres().observe(this, new Observer<String>() {
+        vuelosTerminadosViewModel.getVuelosTerminados().observe(this, new Observer<List<Vuelos>>() {
             @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s[]);
+            public void onChanged(@Nullable List<Vuelos> s) {
+                mAdapter = new MyAdapter(s);
+                recyclerViewVuelos.setAdapter(mAdapter);
             }
-        });*/
+        });
         return root;
     }
 

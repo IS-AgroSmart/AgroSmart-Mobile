@@ -39,4 +39,7 @@
     <string name="crear_vuelo">Crear</string>
     <string name="cancelar_crear_vuelo">Cancelar</string>
 
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
