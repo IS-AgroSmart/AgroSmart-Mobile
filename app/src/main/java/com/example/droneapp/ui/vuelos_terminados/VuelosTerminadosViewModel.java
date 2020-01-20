@@ -18,12 +18,12 @@ import java.util.List;
 public class VuelosTerminadosViewModel extends ViewModel {
 
     private MutableLiveData<List<Vuelos>> mVuelos;
-    private List<Vuelos> vuelos;
+    private static List<Vuelos> vuelos;
 
     public VuelosTerminadosViewModel() {
         /*Aqui se añadiran los nombres y las descripciones de los Vuelos terminados*/
         mVuelos=new MutableLiveData<>();
-        vuelos=obtenerVuelos();
+        vuelos=crearVuelos();
         mVuelos.setValue(vuelos);
     }
 
@@ -32,7 +32,7 @@ public class VuelosTerminadosViewModel extends ViewModel {
     }
 
     //funcion para obtener vuelos
-    public List<Vuelos> obtenerVuelos() {
+    public List<Vuelos> crearVuelos() {
         /*Obteniendo la fecha y hora*/
         Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -50,6 +50,10 @@ public class VuelosTerminadosViewModel extends ViewModel {
         vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
         vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
 
+        return vuelos;
+    }
+
+    public List<Vuelos> obtenerVuelos(){
         return vuelos;
     }
 }

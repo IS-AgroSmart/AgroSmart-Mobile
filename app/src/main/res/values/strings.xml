@@ -39,7 +39,11 @@
     <string name="crear_vuelo">Crear</string>
     <string name="cancelar_crear_vuelo">Cancelar</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+<!-- visualizacion de vuelos especificos -->
+    <string name="nombre_vuelos_terminados">Nombre</string>
+    <string name="fecha_creacion_vuelos_terminados">Fecha de Creación</string>
+    <string name="tiempo_de_procesamiento_vuelos_terminados">Tiempo de procesamiento</string>
+    <string name="notas_vuelos_terminados">Notas</string>
+    <string name="boton_resultados_vuelos_terminados">RESULTADOS</string>
+    <string name="boton_mosaicos_vuelos_terminados">MOSAICO</string>
 </resources>
