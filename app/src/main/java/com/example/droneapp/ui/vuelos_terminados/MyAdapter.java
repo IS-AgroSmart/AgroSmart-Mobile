@@ -26,9 +26,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
         public MyViewHolder(View view) {
             super(view);
-            textView_nombre_vuelo= (TextView) view.findViewById(R.id.textView_nombre_vuelo);
-            textView_fecha_creacion= (TextView) view.findViewById(R.id.textView_fecha_de_creacion);
-            textView_descripcion_vuelo=(TextView) view.findViewById(R.id.textView_descripcion_vuelo);
+            textView_nombre_vuelo= (TextView) view.findViewById(R.id.textView_item_nombre_vuelo);
+            textView_fecha_creacion= (TextView) view.findViewById(R.id.textView_item_fecha_de_creacion);
+            textView_descripcion_vuelo=(TextView) view.findViewById(R.id.textView_item_descripcion_vuelo);
         }
     }
 

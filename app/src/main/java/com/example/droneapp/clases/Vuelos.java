@@ -4,6 +4,8 @@ public class Vuelos {
     private String nombre;
     private String fecha_de_creacion;
     private String detalle;
+    private String tiempo_de_procesamiento;
+    private String notas;
 
     public Vuelos(String nombre,String fecha,String detalle){
         this.detalle=detalle;
@@ -33,5 +35,21 @@ public class Vuelos {
 
     public void setDetalle(String detalle) {
         this.detalle = detalle;
+    }
+
+    public String getTiempo_de_procesamiento() {
+        return tiempo_de_procesamiento;
+    }
+
+    public void setTiempo_de_procesamiento(String tiempo_de_procesamiento) {
+        this.tiempo_de_procesamiento = tiempo_de_procesamiento;
+    }
+
+    public String getNotas() {
+        return notas;
+    }
+
+    public void setNotas(String notas) {
+        this.notas = notas;
     }
 }

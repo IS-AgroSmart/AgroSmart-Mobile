@@ -7,8 +7,10 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_vuelos_terminados"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:onClick="onClick_vuelos_terminados"
         app:cardBackgroundColor="#ece7e7">
 
         <LinearLayout
@@ -32,21 +34,23 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView_nombre_vuelo"
+                    android:id="@+id/textView_item_nombre_vuelo"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_margin="3dp"
+                    android:onClick="onClick_vuelos_terminados"
                     android:textSize="24sp"
                     app:fontFamily="casual" />
 
                 <TextView
-                    android:id="@+id/textView_fecha_de_creacion"
+                    android:id="@+id/textView_item_fecha_de_creacion"
                     android:layout_width="match_parent"
                     android:layout_height="32dp"
-                    android:layout_margin="3dp" />
+                    android:layout_margin="3dp"
+                    android:onClick="onClick_vuelos_terminados" />
 
                 <TextView
-                    android:id="@+id/textView_descripcion_vuelo"
+                    android:id="@+id/textView_item_descripcion_vuelo"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_margin="3dp"

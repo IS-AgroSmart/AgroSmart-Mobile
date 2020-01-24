@@ -3,7 +3,9 @@ package com.example.droneapp;
 import android.os.Bundle;
 
 import com.example.droneapp.ui.crear_vuelo.CrearVueloFragment;
+import com.example.droneapp.ui.vuelos_terminados.Visualizacion_de_vuelo_especifico;
 import com.example.droneapp.ui.vuelos_terminados.VuelosTerminadosFragment;
+import com.example.droneapp.ui.vuelos_terminados.VuelosTerminadosViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
@@ -81,5 +83,11 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    public void onClick_vuelos_terminados(View view){
+        Visualizacion_de_vuelo_especifico vuelo_especifico=new Visualizacion_de_vuelo_especifico(view);
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,vuelo_especifico).commit();
+
     }
 }

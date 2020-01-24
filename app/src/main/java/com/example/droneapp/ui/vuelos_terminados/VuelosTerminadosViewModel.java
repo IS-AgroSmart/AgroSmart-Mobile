@@ -49,7 +49,6 @@ public class VuelosTerminadosViewModel extends ViewModel {
         vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
         vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
         vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
-
         return vuelos;
     }
 
