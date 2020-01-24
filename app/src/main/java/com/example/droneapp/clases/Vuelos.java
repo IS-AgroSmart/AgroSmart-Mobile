@@ -1,16 +1,21 @@
 package com.example.droneapp.clases;
 
-public class Vuelos {
+import java.io.Serializable;
+
+public class Vuelos implements Serializable{
     private String nombre;
     private String fecha_de_creacion;
     private String detalle;
     private String tiempo_de_procesamiento;
     private String notas;
 
-    public Vuelos(String nombre,String fecha,String detalle){
+    public Vuelos(String nombre,String fecha,String detalle)
+    {
         this.detalle=detalle;
         this.nombre=nombre;
         this.fecha_de_creacion=fecha;
+        this.tiempo_de_procesamiento="16h 40m";
+        this.notas="Vuelo sin problemasssss...";
     }
 
     public String getNombre() {

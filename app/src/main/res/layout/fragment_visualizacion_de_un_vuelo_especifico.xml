@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.vuelos_terminados.Visualizacion_de_vuelo_especifico">
+    tools:context=".ui.vuelos_terminados.Visualizacion_de_un_vuelo_especifico">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:text="@string/action_settings">
 
         <LinearLayout
             android:layout_width="wrap_content"

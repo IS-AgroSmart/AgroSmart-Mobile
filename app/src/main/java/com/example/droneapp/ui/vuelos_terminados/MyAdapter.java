@@ -13,7 +13,17 @@ import com.example.droneapp.clases.Vuelos;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
+implements View.OnClickListener{
+
+    private View.OnClickListener listener;
+
+    @Override
+    public void onClick(View v) {
+        if(this.listener!=null){
+            listener.onClick(v);
+        }
+    }
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -44,9 +54,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_list_vuelos_terminados, parent, false);
         MyAdapter.MyViewHolder viewHolder = new MyAdapter.MyViewHolder(view);
+
+        view.setOnClickListener(this);
+
         return viewHolder;
     }
-
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
+    }
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
@@ -63,4 +78,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     public int getItemCount() {
         return this.listVuelos.size();
     }
+
 }

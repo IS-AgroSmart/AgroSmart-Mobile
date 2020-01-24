@@ -1,18 +1,17 @@
 package com.example.droneapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.droneapp.ui.crear_vuelo.CrearVueloFragment;
-import com.example.droneapp.ui.vuelos_terminados.Visualizacion_de_vuelo_especifico;
+import com.example.droneapp.clases.Vuelos;
+import com.example.droneapp.ui.vuelos_terminados.IComunicaVuelosFragments;
+import com.example.droneapp.ui.vuelos_terminados.Visualizacion_de_un_vuelo_especifico;
 import com.example.droneapp.ui.vuelos_terminados.VuelosTerminadosFragment;
-import com.example.droneapp.ui.vuelos_terminados.VuelosTerminadosViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 
 import android.view.View;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -27,7 +26,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IComunicaVuelosFragments {
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -50,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
         final NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        VuelosTerminadosFragment vuelos_t=new VuelosTerminadosFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,vuelos_t);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,9 +82,14 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    public void onClick_vuelos_terminados(View view){
-        Visualizacion_de_vuelo_especifico vuelo_especifico=new Visualizacion_de_vuelo_especifico(view);
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,vuelo_especifico).commit();
+    @Override
+    public void enviarVuelo(Vuelos vuelo) {
+        Visualizacion_de_un_vuelo_especifico vuelo_especifico=new Visualizacion_de_un_vuelo_especifico();
+        Bundle bundle=new Bundle();
+        bundle.putSerializable("objeto",vuelo);
+        vuelo_especifico.setArguments(bundle);
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.contenedor_fragment,vuelo_especifico).addToBackStack(null).commit();
     }
 }

@@ -1,9 +1,13 @@
 package com.example.droneapp.ui.vuelos_terminados;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
@@ -22,7 +26,10 @@ public class VuelosTerminadosFragment extends Fragment {
 
     private VuelosTerminadosViewModel vuelosTerminadosViewModel;
     private RecyclerView recyclerViewVuelos;
-    private RecyclerView.Adapter mAdapter;
+    private MyAdapter mAdapter;
+
+    Activity activity;
+    IComunicaVuelosFragments interfaceComunica;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -37,9 +44,29 @@ public class VuelosTerminadosFragment extends Fragment {
             public void onChanged(@Nullable List<Vuelos> s) {
                 mAdapter = new MyAdapter(s);
                 recyclerViewVuelos.setAdapter(mAdapter);
+               mAdapter.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       interfaceComunica.enviarVuelo((Vuelos)s
+                               .get(recyclerViewVuelos.getChildAdapterPosition(v)));
+
+                       Toast.makeText(getContext(),"Seleccionado: "+s
+                               .get(recyclerViewVuelos.getChildAdapterPosition(v)).getNombre(),Toast.LENGTH_SHORT).show();
+                   }
+               });
             }
         });
+
         return root;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if (context instanceof Activity) {
+            this.activity = (Activity) context;
+            this.interfaceComunica = (IComunicaVuelosFragments) this.activity;
+        }
+    }
 }
