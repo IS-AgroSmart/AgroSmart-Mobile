@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements IComunicaVuelosFr
         setContentView(R.layout.activity_main);
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final FloatingActionButton fab = findViewById(R.id.fab);
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -50,22 +48,6 @@ public class MainActivity extends AppCompatActivity implements IComunicaVuelosFr
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //NavController navController = Navigation.findNavController(getParent(), R.id.nav_crear_vuelo);
-                //NavigationUI.navigateUp(navController,mAppBarConfiguration);
-                /*
-                CrearVueloFragment ct=new CrearVueloFragment();
-                //getSupportFragmentManager().beginTransaction().remove(getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).commit();
-                getSupportFragmentManager().beginTransaction().replace(
-                        R.id.nav_host_fragment,ct).commit();
-                /*
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                 */
-            }
-        });
     }
 
     @Override

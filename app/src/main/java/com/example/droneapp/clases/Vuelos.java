@@ -15,7 +15,7 @@ public class Vuelos implements Serializable{
         this.nombre=nombre;
         this.fecha_de_creacion=fecha;
         this.tiempo_de_procesamiento="16h 40m";
-        this.notas="Vuelo sin problemasssss...";
+        this.notas="Vuelo procesado sin problemas";
     }
 
     public String getNombre() {

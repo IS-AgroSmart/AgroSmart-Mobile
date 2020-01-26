@@ -2,6 +2,7 @@ package com.example.droneapp.ui.vuelos_terminados;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,22 +15,28 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.droneapp.R;
 import com.example.droneapp.clases.Vuelos;
+import com.example.droneapp.ui.crear_vuelo.CrearVueloFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
 public class VuelosTerminadosFragment extends Fragment {
 
+
+    private FloatingActionButton fab;
     private VuelosTerminadosViewModel vuelosTerminadosViewModel;
     private RecyclerView recyclerViewVuelos;
     private MyAdapter mAdapter;
 
     Activity activity;
     IComunicaVuelosFragments interfaceComunica;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -58,6 +65,16 @@ public class VuelosTerminadosFragment extends Fragment {
         });
 
         return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        getView().findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.nav_crear_vuelo);
+            }
+        });
     }
 
     @Override
