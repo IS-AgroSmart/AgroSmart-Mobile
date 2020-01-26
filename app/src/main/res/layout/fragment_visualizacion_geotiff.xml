@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.vuelos_terminados.Visualizacion_de_un_vuelo_especifico">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:text="@string/action_settings">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="638dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/mosaico_png"
+                android:layout_width="wrap_content"
+                android:layout_height="621dp"
+                android:layout_weight="1"
+                android:src="@mipmap/ic_launcher_dron" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nombre_vuelo"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:text="Vuelo de Prueba"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/hectareas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3.4 hectareas" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
