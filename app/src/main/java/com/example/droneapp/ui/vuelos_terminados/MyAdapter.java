@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.droneapp.R;
-import com.example.droneapp.clases.Vuelos;
+import com.example.droneapp.clases.Vuelo;
 
 import java.util.List;
 
@@ -42,10 +42,10 @@ implements View.OnClickListener{
         }
     }
 
-    private List<Vuelos> listVuelos;
+    private List<Vuelo> listVuelos;
 
-    public MyAdapter(List<Vuelos> ListVuelos) {
-        this.listVuelos = ListVuelos;
+    public MyAdapter(List<Vuelo> vuelos) {
+        this.listVuelos = vuelos;
     }
 
     // Create new views (invoked by the layout manager)

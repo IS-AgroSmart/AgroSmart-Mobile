@@ -1,16 +1,11 @@
 package com.example.droneapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.droneapp.clases.Vuelos;
+import com.example.droneapp.clases.Vuelo;
 import com.example.droneapp.ui.vuelos_terminados.IComunicaVuelosFragments;
 import com.example.droneapp.ui.vuelos_terminados.Visualizacion_de_un_vuelo_especifico;
-import com.example.droneapp.ui.vuelos_terminados.VuelosTerminadosFragment;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-
-import android.view.View;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -65,13 +60,13 @@ public class MainActivity extends AppCompatActivity implements IComunicaVuelosFr
     }
 
     @Override
-    public void enviarVuelo(Vuelos vuelo) {
-        Visualizacion_de_un_vuelo_especifico vuelo_especifico=new Visualizacion_de_un_vuelo_especifico();
-        Bundle bundle=new Bundle();
-        bundle.putSerializable("objeto",vuelo);
+    public void enviarVuelo(Vuelo vuelo) {
+        Visualizacion_de_un_vuelo_especifico vuelo_especifico = new Visualizacion_de_un_vuelo_especifico();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("objeto", vuelo);
         vuelo_especifico.setArguments(bundle);
 
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.contenedor_fragment,vuelo_especifico).addToBackStack(null).commit();
+                .replace(R.id.contenedor_fragment, vuelo_especifico).addToBackStack(null).commit();
     }
 }

@@ -1,6 +1,5 @@
 package com.example.droneapp.ui.vuelos_terminados;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -12,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.droneapp.R;
-import com.example.droneapp.clases.Vuelos;
+import com.example.droneapp.clases.Vuelo;
 
 
 /**
@@ -34,7 +33,7 @@ public class Visualizacion_de_un_vuelo_especifico extends Fragment {
     private String mParam2;
 
     private View view;
-    private Vuelos vuelo;
+    private Vuelo vuelo;
 
 
     private OnFragmentInteractionListener mListener;
@@ -81,10 +80,10 @@ public class Visualizacion_de_un_vuelo_especifico extends Fragment {
         final TextView text_notas = (TextView)rootf.findViewById(R.id.textView_notas_de_vuelos_terminados);
 
         Bundle vuelo_obtenido=getArguments();
-        Vuelos objetoVuelo=null;
+        Vuelo objetoVuelo=null;
 
         if(vuelo_obtenido!=null){
-            objetoVuelo=(Vuelos)vuelo_obtenido.getSerializable("objeto");
+            objetoVuelo=(Vuelo)vuelo_obtenido.getSerializable("objeto");
             text_nombre_vuelo.setText(objetoVuelo.getNombre());
             text_fecha_de_creacion_vuelo.setText(objetoVuelo.getFecha_de_creacion());
             text_tiempo_de_procesamiento.setText(objetoVuelo.getTiempo_de_procesamiento());

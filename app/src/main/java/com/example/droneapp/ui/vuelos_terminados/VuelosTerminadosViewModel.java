@@ -3,11 +3,8 @@ package com.example.droneapp.ui.vuelos_terminados;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.droneapp.R;
-import com.example.droneapp.clases.Vuelos;
+import com.example.droneapp.clases.Vuelo;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -17,8 +14,8 @@ import java.util.List;
 
 public class VuelosTerminadosViewModel extends ViewModel {
 
-    private MutableLiveData<List<Vuelos>> mVuelos;
-    private static List<Vuelos> vuelos;
+    private MutableLiveData<List<Vuelo>> mVuelos;
+    private static List<Vuelo> vuelos;
 
     public VuelosTerminadosViewModel() {
         /*Aqui se añadiran los nombres y las descripciones de los Vuelos terminados*/
@@ -27,32 +24,32 @@ public class VuelosTerminadosViewModel extends ViewModel {
         mVuelos.setValue(vuelos);
     }
 
-    public LiveData<List<Vuelos>> getVuelosTerminados() {
+    public LiveData<List<Vuelo>> getVuelosTerminados() {
         return mVuelos;
     }
 
     //funcion para obtener vuelos
-    public List<Vuelos> crearVuelos() {
+    public List<Vuelo> crearVuelos() {
         /*Obteniendo la fecha y hora*/
         Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String fecha=hourdateFormat.format(date);
         vuelos = new ArrayList<>();
-        vuelos.add(new Vuelos("Campo de maiz",fecha, "Micasense Red Egde M"));
-        vuelos.add(new Vuelos("Campo de arroz", fecha,"Cuidado con las moscas"));
-        vuelos.add(new Vuelos("Campo politecnico",fecha, "Don't kill dog on the streets"));
-        vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
-        vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
-        vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
-        vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
-        vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
-        vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
-        vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
-        vuelos.add(new Vuelos("Campo de verde",fecha, "The best friend of the men"));
+        vuelos.add(new Vuelo("Campo de maiz",fecha, "Micasense Red Egde M"));
+        vuelos.add(new Vuelo("Campo de arroz", fecha,"Cuidado con las moscas"));
+        vuelos.add(new Vuelo("Campo politecnico",fecha, "Don't kill dog on the streets"));
+        vuelos.add(new Vuelo("Campo de verde",fecha, "The best friend of the men"));
+        vuelos.add(new Vuelo("Campo de verde",fecha, "The best friend of the men"));
+        vuelos.add(new Vuelo("Campo de verde",fecha, "The best friend of the men"));
+        vuelos.add(new Vuelo("Campo de verde",fecha, "The best friend of the men"));
+        vuelos.add(new Vuelo("Campo de verde",fecha, "The best friend of the men"));
+        vuelos.add(new Vuelo("Campo de verde",fecha, "The best friend of the men"));
+        vuelos.add(new Vuelo("Campo de verde",fecha, "The best friend of the men"));
+        vuelos.add(new Vuelo("Campo de verde",fecha, "The best friend of the men"));
         return vuelos;
     }
 
-    public List<Vuelos> obtenerVuelos(){
+    public List<Vuelo> obtenerVuelos(){
         return vuelos;
     }
 }

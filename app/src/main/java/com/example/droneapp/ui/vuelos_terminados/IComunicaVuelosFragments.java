@@ -1,7 +1,7 @@
 package com.example.droneapp.ui.vuelos_terminados;
 
-import com.example.droneapp.clases.Vuelos;
+import com.example.droneapp.clases.Vuelo;
 
 public interface IComunicaVuelosFragments {
-    public void enviarVuelo(Vuelos vuelo);
+    public void enviarVuelo(Vuelo vuelo);
 }

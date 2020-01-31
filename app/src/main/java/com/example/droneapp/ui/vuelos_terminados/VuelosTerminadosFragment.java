@@ -2,11 +2,9 @@ package com.example.droneapp.ui.vuelos_terminados;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -20,8 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.droneapp.R;
-import com.example.droneapp.clases.Vuelos;
-import com.example.droneapp.ui.crear_vuelo.CrearVueloFragment;
+import com.example.droneapp.clases.Vuelo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -46,21 +43,21 @@ public class VuelosTerminadosFragment extends Fragment {
         recyclerViewVuelos = (RecyclerView) root.findViewById(R.id.recicler_terminar_vuelos);
         recyclerViewVuelos.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        vuelosTerminadosViewModel.getVuelosTerminados().observe(this, new Observer<List<Vuelos>>() {
+        vuelosTerminadosViewModel.getVuelosTerminados().observe(this, new Observer<List<Vuelo>>() {
             @Override
-            public void onChanged(@Nullable List<Vuelos> s) {
+            public void onChanged(@Nullable final List<Vuelo> s) {
                 mAdapter = new MyAdapter(s);
                 recyclerViewVuelos.setAdapter(mAdapter);
-               mAdapter.setOnClickListener(new View.OnClickListener() {
-                   @Override
-                   public void onClick(View v) {
-                       interfaceComunica.enviarVuelo((Vuelos)s
-                               .get(recyclerViewVuelos.getChildAdapterPosition(v)));
+                mAdapter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        interfaceComunica.enviarVuelo((Vuelo) s
+                                .get(recyclerViewVuelos.getChildAdapterPosition(v)));
 
-                       Toast.makeText(getContext(),"Seleccionado: "+s
-                               .get(recyclerViewVuelos.getChildAdapterPosition(v)).getNombre(),Toast.LENGTH_SHORT).show();
-                   }
-               });
+                        Toast.makeText(getContext(), "Seleccionado: " + s
+                                .get(recyclerViewVuelos.getChildAdapterPosition(v)).getNombre(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
