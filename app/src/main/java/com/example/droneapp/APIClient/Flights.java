@@ -30,7 +30,7 @@ public class Flights implements Callback<List<FlightPOJO>>{
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
-        FetchFlights callFlights = retrofit.create(FetchFlights.class);
+        FlightService callFlights = retrofit.create(FlightService.class);
 
         Call<List<FlightPOJO>> call = callFlights.listFlights();
         call.enqueue(this);

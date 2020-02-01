@@ -8,19 +8,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.droneapp.APIClient.FlightPOJO;
 import com.example.droneapp.R;
-import com.example.droneapp.clases.Vuelo;
 
 import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder>
-implements View.OnClickListener{
+        implements View.OnClickListener {
 
     private View.OnClickListener listener;
 
     @Override
     public void onClick(View v) {
-        if(this.listener!=null){
+        if (this.listener != null) {
             listener.onClick(v);
         }
     }
@@ -36,15 +36,15 @@ implements View.OnClickListener{
 
         public MyViewHolder(View view) {
             super(view);
-            textView_nombre_vuelo= (TextView) view.findViewById(R.id.textView_item_nombre_vuelo);
-            textView_fecha_creacion= (TextView) view.findViewById(R.id.textView_item_fecha_de_creacion);
-            textView_descripcion_vuelo=(TextView) view.findViewById(R.id.textView_item_descripcion_vuelo);
+            textView_nombre_vuelo = (TextView) view.findViewById(R.id.textView_item_nombre_vuelo);
+            textView_fecha_creacion = (TextView) view.findViewById(R.id.textView_item_fecha_de_creacion);
+            textView_descripcion_vuelo = (TextView) view.findViewById(R.id.textView_item_descripcion_vuelo);
         }
     }
 
-    private List<Vuelo> listVuelos;
+    private List<FlightPOJO> listVuelos;
 
-    public MyAdapter(List<Vuelo> vuelos) {
+    public MyAdapter(List<FlightPOJO> vuelos) {
         this.listVuelos = vuelos;
     }
 
@@ -59,17 +59,19 @@ implements View.OnClickListener{
 
         return viewHolder;
     }
-    public void setOnClickListener(View.OnClickListener listener){
-        this.listener=listener;
+
+    public void setOnClickListener(View.OnClickListener listener) {
+        this.listener = listener;
     }
+
     // Replace the contents of a view (invoked by the layout manager)
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.textView_nombre_vuelo.setText(listVuelos.get(position).getNombre());
-        holder.textView_fecha_creacion.setText(listVuelos.get(position).getFecha_de_creacion());
-        holder.textView_descripcion_vuelo.setText(listVuelos.get(position).getDetalle());
+        holder.textView_nombre_vuelo.setText(listVuelos.get(position).getName());
+        holder.textView_fecha_creacion.setText(listVuelos.get(position).getDate());
+        holder.textView_descripcion_vuelo.setText(listVuelos.get(position).getAnnotations());
 
     }
 

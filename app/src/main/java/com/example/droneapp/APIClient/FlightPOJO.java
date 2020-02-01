@@ -2,7 +2,9 @@ package com.example.droneapp.APIClient;
 
 import org.json.JSONObject;
 
-public class FlightPOJO {
+import java.io.Serializable;
+
+public class FlightPOJO implements Serializable {
 
     protected String uuid;
     protected String name;
@@ -12,6 +14,7 @@ public class FlightPOJO {
     protected String state;
     protected JSONObject node_odm_info;
     protected double processing_time;
+    protected String annotations;
 
     public String getUuid() {
         return uuid;
@@ -75,6 +78,14 @@ public class FlightPOJO {
 
     public void setProcessing_time(double processing_time) {
         this.processing_time = processing_time;
+    }
+
+    public String getAnnotations() {
+        return annotations;
+    }
+
+    public void setAnnotations(String annotations) {
+        this.annotations = annotations;
     }
 
     @Override

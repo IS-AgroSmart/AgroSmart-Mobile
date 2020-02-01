@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.droneapp.APIClient.FlightPOJO;
 import com.example.droneapp.R;
-import com.example.droneapp.clases.Vuelo;
 
 
 /**
@@ -28,14 +28,6 @@ public class Visualizacion_de_un_vuelo_especifico extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private View view;
-    private Vuelo vuelo;
-
-
     private OnFragmentInteractionListener mListener;
 
     public Visualizacion_de_un_vuelo_especifico() {
@@ -49,45 +41,42 @@ public class Visualizacion_de_un_vuelo_especifico extends Fragment {
      * @param //param1 Parameter 1.
      * @param //param2 Parameter 2.
      * @return A new instance of fragment Visualizacion_de_un_vuelo_especifico.
-
-    // TODO: Rename and change types and number of parameters
-    public static Visualizacion_de_un_vuelo_especifico newInstance(String param1, String param2) {
-        Visualizacion_de_un_vuelo_especifico fragment = new Visualizacion_de_un_vuelo_especifico();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }  */
+     * <p>
+     * // TODO: Rename and change types and number of parameters
+     * public static Visualizacion_de_un_vuelo_especifico newInstance(String param1, String param2) {
+     * Visualizacion_de_un_vuelo_especifico fragment = new Visualizacion_de_un_vuelo_especifico();
+     * Bundle args = new Bundle();
+     * args.putString(ARG_PARAM1, param1);
+     * args.putString(ARG_PARAM2, param2);
+     * fragment.setArguments(args);
+     * return fragment;
+     * }
+     */
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootf=inflater.inflate(R.layout.fragment_visualizacion_de_un_vuelo_especifico,container,false);
-        final TextView text_nombre_vuelo=(TextView)rootf.findViewById(R.id.textView_nombre_de_vuelos_terminados);
-        final TextView text_fecha_de_creacion_vuelo=(TextView)rootf.findViewById(R.id.textView_fecha_de_vuelos_terminados);
-        final TextView text_tiempo_de_procesamiento=(TextView)rootf.findViewById(R.id.textView_timempo_de_procesamiento_de_vuelos_terminados);
-        final TextView text_notas = (TextView)rootf.findViewById(R.id.textView_notas_de_vuelos_terminados);
+        View rootf = inflater.inflate(R.layout.fragment_visualizacion_de_un_vuelo_especifico, container, false);
+        final TextView text_nombre_vuelo = (TextView) rootf.findViewById(R.id.textView_nombre_de_vuelos_terminados);
+        final TextView text_fecha_de_creacion_vuelo = (TextView) rootf.findViewById(R.id.textView_fecha_de_vuelos_terminados);
+        final TextView text_tiempo_de_procesamiento = (TextView) rootf.findViewById(R.id.textView_timempo_de_procesamiento_de_vuelos_terminados);
+        final TextView text_notas = (TextView) rootf.findViewById(R.id.textView_notas_de_vuelos_terminados);
 
-        Bundle vuelo_obtenido=getArguments();
-        Vuelo objetoVuelo=null;
+        Bundle vuelo_obtenido = getArguments();
+        FlightPOJO objetoVuelo = null;
 
-        if(vuelo_obtenido!=null){
-            objetoVuelo=(Vuelo)vuelo_obtenido.getSerializable("objeto");
-            text_nombre_vuelo.setText(objetoVuelo.getNombre());
-            text_fecha_de_creacion_vuelo.setText(objetoVuelo.getFecha_de_creacion());
-            text_tiempo_de_procesamiento.setText(objetoVuelo.getTiempo_de_procesamiento());
-            text_notas.setText(objetoVuelo.getNotas());
+        if (vuelo_obtenido != null) {
+            objetoVuelo = (FlightPOJO) vuelo_obtenido.getSerializable("objeto");
+            text_nombre_vuelo.setText(objetoVuelo.getName());
+            text_fecha_de_creacion_vuelo.setText(objetoVuelo.getDate());
+            text_tiempo_de_procesamiento.setText("" + objetoVuelo.getProcessing_time());
+            text_notas.setText(objetoVuelo.getAnnotations());
         }
 
         return rootf;

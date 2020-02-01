@@ -17,8 +17,8 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.droneapp.APIClient.FlightPOJO;
 import com.example.droneapp.R;
-import com.example.droneapp.clases.Vuelo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -43,19 +43,19 @@ public class VuelosTerminadosFragment extends Fragment {
         recyclerViewVuelos = (RecyclerView) root.findViewById(R.id.recicler_terminar_vuelos);
         recyclerViewVuelos.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        vuelosTerminadosViewModel.getVuelosTerminados().observe(this, new Observer<List<Vuelo>>() {
+        vuelosTerminadosViewModel.getVuelosTerminados().observe(this, new Observer<List<FlightPOJO>>() {
             @Override
-            public void onChanged(@Nullable final List<Vuelo> s) {
+            public void onChanged(@Nullable final List<FlightPOJO> s) {
                 mAdapter = new MyAdapter(s);
                 recyclerViewVuelos.setAdapter(mAdapter);
                 mAdapter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        interfaceComunica.enviarVuelo((Vuelo) s
+                        interfaceComunica.enviarVuelo((FlightPOJO) s
                                 .get(recyclerViewVuelos.getChildAdapterPosition(v)));
 
                         Toast.makeText(getContext(), "Seleccionado: " + s
-                                .get(recyclerViewVuelos.getChildAdapterPosition(v)).getNombre(), Toast.LENGTH_SHORT).show();
+                                .get(recyclerViewVuelos.getChildAdapterPosition(v)).getName(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }

@@ -2,7 +2,7 @@ package com.example.droneapp;
 
 import android.os.Bundle;
 
-import com.example.droneapp.clases.Vuelo;
+import com.example.droneapp.APIClient.FlightPOJO;
 import com.example.droneapp.ui.vuelos_terminados.IComunicaVuelosFragments;
 import com.example.droneapp.ui.vuelos_terminados.Visualizacion_de_un_vuelo_especifico;
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements IComunicaVuelosFr
     }
 
     @Override
-    public void enviarVuelo(Vuelo vuelo) {
+    public void enviarVuelo(FlightPOJO vuelo) {
         Visualizacion_de_un_vuelo_especifico vuelo_especifico = new Visualizacion_de_un_vuelo_especifico();
         Bundle bundle = new Bundle();
         bundle.putSerializable("objeto", vuelo);

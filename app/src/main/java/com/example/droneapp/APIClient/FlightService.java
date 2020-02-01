@@ -9,11 +9,11 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 
-public interface FetchFlights {
+public interface FlightService {
 
     String API_ROUTE = "/api/flights/";
 
-    @GET(API_ROUTE)
+    @GET("flights")
     Call<List<FlightPOJO>> listFlights();
 
     @GET(API_ROUTE)
