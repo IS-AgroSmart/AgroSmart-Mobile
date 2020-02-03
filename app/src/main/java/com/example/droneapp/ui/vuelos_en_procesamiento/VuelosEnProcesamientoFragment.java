@@ -40,8 +40,7 @@ public class VuelosEnProcesamientoFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        vm =
-                ViewModelProviders.of(this).get(VuelosEnProcesamientoViewModel.class);
+        vm = ViewModelProviders.of(this).get(VuelosEnProcesamientoViewModel.class);
         View root = inflater.inflate(R.layout.fragment_vuelos_en_procesamiento, container, false);
         recyclerViewVuelos = root.findViewById(R.id.recycler_vuelos);
         recyclerViewVuelos.setLayoutManager(new LinearLayoutManager(getContext()));
