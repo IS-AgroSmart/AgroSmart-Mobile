@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.function.Predicate;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -57,7 +58,13 @@ public class VuelosTerminadosViewModel extends ViewModel {
             @Override
             public void onResponse(Call<List<FlightPOJO>> call, Response<List<FlightPOJO>> response) {
                 Log.d("FLIGHTS", "crearVuelos: " + response.body());
-                vuelos = response.body();
+                List<FlightPOJO> tmp = response.body();
+
+                for (FlightPOJO c : tmp) {
+                    if (c.getState().equals("COMPLETE")) {
+                        vuelos.add(c);
+                    }
+                }
                 mVuelos.setValue(vuelos);
             }
 

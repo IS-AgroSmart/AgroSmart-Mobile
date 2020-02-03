@@ -4,9 +4,15 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.droneapp.APIClient.FlightPOJO;
+
+import java.util.List;
+
 public class VuelosEnProcesamientoViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
+    private MutableLiveData<List<FlightPOJO>> mVuelos;
+    private static List<FlightPOJO> vuelos;
 
     public VuelosEnProcesamientoViewModel() {
         mText = new MutableLiveData<>();
@@ -16,4 +22,9 @@ public class VuelosEnProcesamientoViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
+
+    public LiveData<List<FlightPOJO>> getVuelosProcesamiento() {
+        return mVuelos;
+    }
+
 }

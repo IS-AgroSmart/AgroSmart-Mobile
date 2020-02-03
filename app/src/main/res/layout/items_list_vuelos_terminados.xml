@@ -24,7 +24,6 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:contentDescription="@string/nav_header_desc"
-                android:src="@mipmap/icono_dron"
                 app:srcCompat="@mipmap/ic_launcher_dron_round" />
 
             <LinearLayout
