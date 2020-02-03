@@ -12,8 +12,10 @@ import com.example.droneapp.APIClient.FlightService;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,7 +45,7 @@ public class VuelosTerminadosViewModel extends ViewModel {
         Date date = new Date();
         DateFormat hourdateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String fecha = hourdateFormat.format(date);
-        vuelos = new ArrayList<>();
+        vuelos =  new CopyOnWriteArrayList<FlightPOJO>();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://391b5808-8024-4864-bda1-992db1ce4e6a.mock.pstmn.io/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -58,7 +60,13 @@ public class VuelosTerminadosViewModel extends ViewModel {
             public void onResponse(Call<List<FlightPOJO>> call, Response<List<FlightPOJO>> response) {
                 Log.d("FLIGHTS", "crearVuelos: " + response.body());
                 vuelos = response.body();
-                mVuelos.setValue(vuelos);
+                ArrayList<FlightPOJO> vuelosTerminados = new ArrayList<>();
+                for(FlightPOJO v : vuelos){
+                    if(v.getState().equals("COMPLETE")){
+                        vuelosTerminados.add(v);
+                    }
+                }
+                mVuelos.setValue(vuelosTerminados);
             }
 
             @Override

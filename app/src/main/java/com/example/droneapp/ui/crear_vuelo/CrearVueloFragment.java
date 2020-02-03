@@ -16,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
 import com.example.droneapp.R;
 
@@ -65,6 +66,15 @@ public class CrearVueloFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        getView().findViewById(R.id.button_cancelar_crear_vuelo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.nav_vuelos_terminados);
+            }
+        });
     }
 
 }
