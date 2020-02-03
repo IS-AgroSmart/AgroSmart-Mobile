@@ -30,6 +30,16 @@
         tools:layout="@layout/fragment_vuelos_pendientes" />
 
     <fragment
+        android:id="@+id/nav_detalles_vuelo"
+        android:name="com.example.droneapp.ui.vuelos_terminados.Visualizacion_de_un_vuelo_especifico"
+        android:label="@string/menu_detalles_vuelo"
+        tools:layout="@layout/fragment_visualizacion_de_un_vuelo_especifico">
+        <argument
+            android:name="flight"
+            app:argType="com.example.droneapp.APIClient.FlightPOJO" />
+    </fragment>
+
+    <fragment
         android:id="@+id/nav_cerrar_sesion"
         android:name="com.example.droneapp.ui.cerrar_sesion.CerrarSesionFragment"
         android:label="@string/menu_cerrar_sesion" />

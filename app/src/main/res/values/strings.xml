@@ -12,6 +12,7 @@
     <string name="menu_vuelos_terminados" translatable="false">Vuelos Terminados</string>
     <string name="menu_vuelos_en_procesamiento" translatable="false">Vuelos en Procesamiento</string>
     <string name="menu_vuelos_pendientes" translatable="false">Vuelos Pendientes</string>
+    <string name="menu_detalles_vuelo" translatable="false">Detalles de vuelo</string>
 
     <string name="menu_cerrar_sesion" translatable="false">Cerrar Sesion</string>
     <string name="menu_cerrar_sesion_antes" translatable="false">Opciones Adicionales</string>

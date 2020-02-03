@@ -7,11 +7,13 @@ import com.example.droneapp.ui.vuelos_terminados.IComunicaVuelosFragments;
 import com.example.droneapp.ui.vuelos_terminados.Visualizacion_de_un_vuelo_especifico;
 
 
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.droneapp.ui.vuelos_terminados.VuelosTerminadosFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
