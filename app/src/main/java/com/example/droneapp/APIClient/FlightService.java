@@ -21,7 +21,7 @@ public interface FlightService {
     @GET(API_ROUTE)
     Call<FlightPOJO> showFlight(@Path("uid") String uuid);
 
-    @POST(API_ROUTE+"new")
+    @POST("flights")
     Call<FlightPOJO> createFlight(@Body FlightPOJO flight);
 
     @PUT(API_ROUTE+"{uid}")
