@@ -43,4 +43,21 @@
         android:id="@+id/nav_cerrar_sesion"
         android:name="com.example.droneapp.ui.cerrar_sesion.CerrarSesionFragment"
         android:label="@string/menu_cerrar_sesion" />
+
+    <fragment
+        android:id="@+id/nav_geotiff"
+        android:name="com.example.droneapp.ui.ortomosaico.ortomosaico"
+        android:label="@string/ortomosaico"
+        tools:layout="@layout/fragment_ortomosaico" />
+
+    <fragment
+        android:id="@+id/nav_vuelo_especifico"
+        android:name="com.example.droneapp.ui.vuelos_terminados.Visualizacion_de_un_vuelo_especifico"
+        android:label="@string/vuelo_especifico"
+        tools:layout="@layout/fragment_visualizacion_de_un_vuelo_especifico">
+        <action
+            android:id="@+id/action_navigation_vuelo_especifico_ortomosaico"
+            app:destination="@id/nav_geotiff" />
+    </fragment>
+
 </navigation>

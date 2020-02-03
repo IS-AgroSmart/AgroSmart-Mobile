@@ -76,4 +76,13 @@ public class CrearVueloFragment extends Fragment {
         return root;
     }
 
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        getView().findViewById(R.id.button_cancelar_crear_vuelo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.nav_vuelos_terminados);
+            }
+        });
+    }
+
 }
