@@ -16,8 +16,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
 import com.example.droneapp.R;
+import com.example.droneapp.ui.vuelos_terminados.IComunicaVuelosFragments;
+import com.example.droneapp.ui.vuelos_terminados.VuelosTerminadosFragment;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -43,6 +46,8 @@ public class CrearVueloFragment extends Fragment {
         final Spinner spinner = (Spinner) root.findViewById(R.id.spinner_tipo_camara);
         final EditText text_hora = (EditText) root.findViewById(R.id.fecha_crear_vuelo);
 
+        getActivity().setTitle("Vuelos terminados");
+
         /*Obteniendo la fecha y hora actual*/
         crearVueloViewModel.getTextFechaHora().observe(this, new Observer<String>() {
             @Override
@@ -64,7 +69,20 @@ public class CrearVueloFragment extends Fragment {
                 spinner.setAdapter(adapter);
             }
         });
+
+        root.findViewById(R.id.button_crear_vuelo).setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(R.id.nav_vuelos_en_procesamiento);
+        });
         return root;
+    }
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        getView().findViewById(R.id.button_cancelar_crear_vuelo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.nav_vuelos_terminados);
+            }
+        });
     }
 
 }

@@ -12,6 +12,7 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.droneapp.APIClient.FlightPOJO;
@@ -72,6 +73,7 @@ public class Visualizacion_de_un_vuelo_especifico extends Fragment {
         final TextView text_fecha_de_creacion_vuelo = (TextView) rootf.findViewById(R.id.textView_fecha_de_vuelos_terminados);
         final TextView text_tiempo_de_procesamiento = (TextView) rootf.findViewById(R.id.textView_timempo_de_procesamiento_de_vuelos_terminados);
         final TextView text_notas = (TextView) rootf.findViewById(R.id.textView_notas_de_vuelos_terminados);
+        final LinearLayout buttonContainer = rootf.findViewById(R.id.layout_buttons);
 
         Bundle vuelo_obtenido = getArguments();
         FlightPOJO objetoVuelo = null;
@@ -82,6 +84,10 @@ public class Visualizacion_de_un_vuelo_especifico extends Fragment {
             text_fecha_de_creacion_vuelo.setText(objetoVuelo.getDate());
             text_tiempo_de_procesamiento.setText("" + objetoVuelo.getProcessing_time());
             text_notas.setText(objetoVuelo.getAnnotations());
+
+            if (!objetoVuelo.getState().equals("COMPLETE") && !objetoVuelo.getState().equals("ERROR")) {
+                buttonContainer.setVisibility(View.GONE);
+            }
         }
 
         return rootf;
@@ -98,7 +104,7 @@ public class Visualizacion_de_un_vuelo_especifico extends Fragment {
         getView().findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_navigation_vuelo_especifico_ortomosaico);
+                Navigation.findNavController(view).navigate(R.id.nav_geotiff);
             }
         });
     }

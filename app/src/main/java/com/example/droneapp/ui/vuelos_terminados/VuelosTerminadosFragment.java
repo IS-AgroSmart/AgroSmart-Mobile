@@ -51,8 +51,11 @@ public class VuelosTerminadosFragment extends Fragment {
                 mAdapter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        interfaceComunica.enviarVuelo((FlightPOJO) s
-                                .get(recyclerViewVuelos.getChildAdapterPosition(v)));
+                        FlightPOJO flight = s.get(recyclerViewVuelos.getChildAdapterPosition(v));
+
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("objeto", flight);
+                        Navigation.findNavController(v).navigate(R.id.nav_detalles_vuelo, bundle);
 
                         Toast.makeText(getContext(), "Seleccionado: " + s
                                 .get(recyclerViewVuelos.getChildAdapterPosition(v)).getName(), Toast.LENGTH_SHORT).show();

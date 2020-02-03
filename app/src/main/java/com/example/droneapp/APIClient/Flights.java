@@ -4,6 +4,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
+import com.example.droneapp.ui.login.LoginHelper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -16,7 +17,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class Flights implements Callback<List<FlightPOJO>>{
+public class Flights implements Callback<List<FlightPOJO>> {
 
     static final String BASE_URL = "URL_BASE_DJANGO_SERVER";
 
@@ -32,7 +33,7 @@ public class Flights implements Callback<List<FlightPOJO>>{
 
         FlightService callFlights = retrofit.create(FlightService.class);
 
-        Call<List<FlightPOJO>> call = callFlights.listFlights();
+        Call<List<FlightPOJO>> call = callFlights.listFlights(LoginHelper.getToken());
         call.enqueue(this);
 
     }
@@ -49,7 +50,7 @@ public class Flights implements Callback<List<FlightPOJO>>{
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onResponse(Call<List<FlightPOJO>> call, Response<List<FlightPOJO>> response) {
-        if(response.isSuccessful()) {
+        if (response.isSuccessful()) {
             List<FlightPOJO> FlightList = response.body();
             FlightList.forEach(new Consumer<FlightPOJO>() {
                 @Override
