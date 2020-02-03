@@ -85,7 +85,7 @@ public class Visualizacion_de_un_vuelo_especifico extends Fragment {
             text_tiempo_de_procesamiento.setText("" + objetoVuelo.getProcessing_time());
             text_notas.setText(objetoVuelo.getAnnotations());
 
-            if (!objetoVuelo.getState().equals("COMPLETE") && !objetoVuelo.getState().equals("ERROR")) {
+            if (!objetoVuelo.getState().equals("COMPLETE")) {
                 buttonContainer.setVisibility(View.GONE);
             }
         }
