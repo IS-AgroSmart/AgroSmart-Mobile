@@ -154,7 +154,7 @@
                 android:padding="15dp">
 
                 <EditText
-                    android:id="@+id/textView4"
+                    android:id="@+id/id_comentarios"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/comentarios_crear_vuelo"

@@ -15,6 +15,7 @@ public class FlightPOJO implements Serializable {
     protected JSONObject node_odm_info;
     protected double processing_time;
     protected String annotations;
+    protected boolean is_multiespectral;
 
     public String getUuid() {
         return uuid;
@@ -86,6 +87,14 @@ public class FlightPOJO implements Serializable {
 
     public void setAnnotations(String annotations) {
         this.annotations = annotations;
+    }
+
+    public boolean isIs_multiespectral() {
+        return is_multiespectral;
+    }
+
+    public void setIs_multiespectral(boolean is_multiespectral) {
+        this.is_multiespectral = is_multiespectral;
     }
 
     @Override

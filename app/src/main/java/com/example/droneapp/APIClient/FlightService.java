@@ -22,10 +22,10 @@ public interface FlightService {
     Call<FlightPOJO> showFlight(@Path("uid") String uuid);
 
     @POST(API_ROUTE+"new")
-    Call<FlightPOJO> createFlight(@Body Flights flight);
+    Call<FlightPOJO> createFlight(@Body FlightPOJO flight);
 
     @PUT(API_ROUTE+"{uid}")
-    Call<FlightPOJO> updateFlight(@Path("uid") String uuid, @Body Flights flight);
+    Call<FlightPOJO> updateFlight(@Path("uid") String uuid, @Body FlightPOJO flight);
 
 
 
